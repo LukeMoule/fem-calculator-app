@@ -1,5 +1,116 @@
-:root{
-    --dark-red: hsl(6, 70%, 34%);
+
+.theme1{
+    /*backgrounds*/
+    --main-bg: hsl(222, 26%, 31%);
+    --keypad-bg: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+
+    /*keys*/
+    --key-bg: hsl(30, 25%, 89%);
+    --key-shadow: hsl(28, 16%, 65%);
+
+    /*key accent pop*/
+    --key-pop-bg: hsl(6, 63%, 50%);
+    --key-pop-shadow: hsl(6, 70%, 34%);
+
+    /*key accent dull*/
+    --key-dull-bg: hsl(225, 21%, 49%);
+    --key-dull-shadow: hsl(224, 28%, 35%);
+
+    /*toggle*/
+    --toggle: var(--key-pop-bg);
+    --toggle-bg: var(--keypad-bg);
+
+    /*text*/
+    --text-main: hsl(0, 0%, 100%);
+    --text-key: hsl(221, 14%, 31%);
+    --text-accent-pop: var(--text-main);
+    --text-accent-dull: var(--text-main);
+}
+
+.theme2{
+    /*backgrounds*/
+    --main-bg: hsl(0, 0%, 90%);
+    --keypad-bg: hsl(0, 5%, 81%);
+    --screen-bg: hsl(0, 0%, 93%);
+
+    /*keys*/
+    --key-bg: hsl(45, 7%, 89%);
+    --key-shadow: hsl(35, 11%, 61%);
+
+    /*key accent pop*/
+    --key-pop-bg: hsl(25, 98%, 40%);
+    --key-pop-shadow: hsl(25, 99%, 27%);
+
+    /*key accent dull*/
+    --key-dull-bg: hsl(185, 42%, 37%);
+    --key-dull-shadow: hsl(185, 58%, 25%);
+
+    /*toggle*/
+    --toggle: var(--key-pop-bg);
+    --toggle-bg: var(--keypad-bg);
+
+    /*text*/
+    --text-main: hsl(60, 10%, 19%);
+    --text-key: var(--text-main);
+    --text-accent-pop: hsl(0, 0%, 100%);
+    --text-accent-dull: var(--text-accent-pop);
+}
+
+.theme3{
+    /*backgrounds*/
+    --main-bg: hsl(268, 75%, 9%);
+    --keypad-bg: hsl(268, 71%, 12%);
+    --screen-bg: var(--keypad-bg);
+
+    /*keys*/
+    --key-bg: hsl(268, 47%, 21%);
+    --key-shadow: hsl(290, 70%, 36%);
+
+    /*key accent pop*/
+    --key-pop-bg: hsl(176, 100%, 44%);
+    --key-pop-shadow: hsl(177, 92%, 70%);
+
+    /*key accent dull*/
+    --key-dull-bg:  hsl(281, 89%, 26%);
+    --key-dull-shadow: hsl(285, 91%, 52%);
+
+    /*toggle*/
+    --toggle: var(--key-pop-bg);
+    --toggle-bg: var(--keypad-bg);
+
+    /*text*/
+    --text-main: hsl(52, 100%, 62%);
+    --text-key: var(--text-main);
+    --text-accent-pop: hsl(198, 20%, 13%);
+    --text-accent-dull: hsl(0, 0%, 100%);
+}
+
+.calculator{
+    color: var(--text-main);
+    background-color: var(--main-bg);
+}
+.screen{
+    background-color: var(--screen-bg);
+}
+
+.keypad{
+    background-color: var(--keypad-bg);
+}
+
+.key{
+    color: var(--text-key);
+    background-color: var(--key-bg);
+}
+
+.key:nth-child(4), .key:nth-child(17){
+    color: var(--text-accent-dull);
+    background-color: var(--key-dull-bg);
+}
+
+.key:last-child{
+    color: var(--text-accent-pop);
+    background-color: var(--key-pop-bg);
 }
 
 html {
@@ -16,8 +127,6 @@ body{
     padding: 0;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
 
 .calculator{
     width: 340px;
@@ -44,18 +153,16 @@ h1, h2{
     margin-right: auto;
 }
 
-.result-window{
+.screen{
     display: flex;
-    background-color: pink;
     height: 100px;
     justify-content: end;
     align-items: center;
 }
 
-.keypad-container{
+.keypad{
     
     padding: 1rem;
-    background-color: blue;
     display:grid;
     grid-template-columns: repeat(4, 1fr);
     /*grid-template-rows: repeat(5, 64px);*/
@@ -73,5 +180,7 @@ h1, h2{
 
 .key:nth-last-child(-n+2){
     grid-column: span 2;
-
 }
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
