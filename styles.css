@@ -169,9 +169,19 @@ body{
     align-self: flex-end;
 }
 
-.theme-selector div{
+.theme-selector{
+    width: 65px;
+    font-size: 0.5rem;
+}
+
+.theme-selector > div{
     display:flex;
     justify-content: space-around;
+}
+
+.theme-selector input{
+    padding: 0;
+    margin: 0;
 }
 
 .toggle{

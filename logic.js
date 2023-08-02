@@ -1,15 +1,11 @@
-const themes = ['theme1', 'theme2', 'theme3'];
-let currentTheme = 0;
+let currentTheme = "theme1";
+const themeButtons = document.querySelectorAll('input[name="theme-selector"]');
+themeButtons.forEach((themeButton) => {
+    themeButton.addEventListener("change", (event) =>{
 
-document.querySelector('.toggle').onclick = toggleTheme;
-
-function toggleTheme(){
-    const body = document.querySelector('body');
-    body.classList.remove(themes[currentTheme]);
-    
-    if(++currentTheme >= themes.length){
-        currentTheme = 0;
-    }
-
-    body.classList.add(themes[currentTheme]);
-}
+        const body = document.querySelector('body');
+        body.classList.remove(currentTheme);
+        currentTheme = event.target.value;
+        body.classList.add(currentTheme);
+    })
+})
