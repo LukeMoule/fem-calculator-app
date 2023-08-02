@@ -1,31 +1,33 @@
 
+/*-----THEMES-----*/
+
 .theme1{
     /*backgrounds*/
     --main-bg: hsl(222, 26%, 31%);
     --keypad-bg: hsl(223, 31%, 20%);
     --screen-bg: hsl(224, 36%, 15%);
 
-    /*keys*/
-    --key-bg: hsl(30, 25%, 89%);
-    --key-shadow: hsl(28, 16%, 65%);
+    /*key default*/
+    --key-default-bg: hsl(30, 25%, 89%);
+    --key-default-shadow: hsl(28, 16%, 65%);
 
-    /*key accent pop*/
-    --key-pop-bg: hsl(6, 63%, 50%);
-    --key-pop-shadow: hsl(6, 70%, 34%);
+    /*key standout*/
+    --key-standout-bg: hsl(6, 63%, 50%);
+    --key-standout-shadow: hsl(6, 70%, 34%);
 
-    /*key accent dull*/
-    --key-dull-bg: hsl(225, 21%, 49%);
-    --key-dull-shadow: hsl(224, 28%, 35%);
+    /*key variant*/
+    --key-variant-bg: hsl(225, 21%, 49%);
+    --key-variant-shadow: hsl(224, 28%, 35%);
 
     /*toggle*/
-    --toggle: var(--key-pop-bg);
+    --toggle: var(--key-standout-bg);
     --toggle-bg: var(--keypad-bg);
 
     /*text*/
     --text-main: hsl(0, 0%, 100%);
-    --text-key: hsl(221, 14%, 31%);
-    --text-accent-pop: var(--text-main);
-    --text-accent-dull: var(--text-main);
+    --text-key-default: hsl(221, 14%, 31%);
+    --text-key-standout: var(--text-main);
+    --text-key-variant: var(--text-main);
 }
 
 .theme2{
@@ -34,27 +36,27 @@
     --keypad-bg: hsl(0, 5%, 81%);
     --screen-bg: hsl(0, 0%, 93%);
 
-    /*keys*/
-    --key-bg: hsl(45, 7%, 89%);
-    --key-shadow: hsl(35, 11%, 61%);
+    /*key default*/
+    --key-default-bg: hsl(45, 7%, 89%);
+    --key-default-shadow: hsl(35, 11%, 61%);
 
-    /*key accent pop*/
-    --key-pop-bg: hsl(25, 98%, 40%);
-    --key-pop-shadow: hsl(25, 99%, 27%);
+    /*key standout*/
+    --key-standout-bg: hsl(25, 98%, 40%);
+    --key-standout-shadow: hsl(25, 99%, 27%);
 
-    /*key accent dull*/
-    --key-dull-bg: hsl(185, 42%, 37%);
-    --key-dull-shadow: hsl(185, 58%, 25%);
+    /*key variant*/
+    --key-variant-bg: hsl(185, 42%, 37%);
+    --key-variant-shadow: hsl(185, 58%, 25%);
 
     /*toggle*/
-    --toggle: var(--key-pop-bg);
+    --toggle: var(--key-standout-bg);
     --toggle-bg: var(--keypad-bg);
 
     /*text*/
     --text-main: hsl(60, 10%, 19%);
-    --text-key: var(--text-main);
-    --text-accent-pop: hsl(0, 0%, 100%);
-    --text-accent-dull: var(--text-accent-pop);
+    --text-key-default: var(--text-main);
+    --text-key-standout: hsl(0, 0%, 100%);
+    --text-key-variant: var(--text-key-standout);
 }
 
 .theme3{
@@ -63,27 +65,27 @@
     --keypad-bg: hsl(268, 71%, 12%);
     --screen-bg: var(--keypad-bg);
 
-    /*keys*/
-    --key-bg: hsl(268, 47%, 21%);
-    --key-shadow: hsl(290, 70%, 36%);
+    /*key default*/
+    --key-default-bg: hsl(268, 47%, 21%);
+    --key-default-shadow: hsl(290, 70%, 36%);
 
-    /*key accent pop*/
-    --key-pop-bg: hsl(176, 100%, 44%);
-    --key-pop-shadow: hsl(177, 92%, 70%);
+    /*key standout*/
+    --key-standout-bg: hsl(176, 100%, 44%);
+    --key-standout-shadow: hsl(177, 92%, 70%);
 
-    /*key accent dull*/
-    --key-dull-bg:  hsl(281, 89%, 26%);
-    --key-dull-shadow: hsl(285, 91%, 52%);
+    /*key variant*/
+    --key-variant-bg:  hsl(281, 89%, 26%);
+    --key-variant-shadow: hsl(285, 91%, 52%);
 
     /*toggle*/
-    --toggle: var(--key-pop-bg);
+    --toggle: var(--key-standout-bg);
     --toggle-bg: var(--keypad-bg);
 
     /*text*/
     --text-main: hsl(52, 100%, 62%);
-    --text-key: var(--text-main);
-    --text-accent-pop: hsl(198, 20%, 13%);
-    --text-accent-dull: hsl(0, 0%, 100%);
+    --text-key-default: var(--text-main);
+    --text-key-standout: hsl(198, 20%, 13%);
+    --text-key-variant: hsl(0, 0%, 100%);
 }
 
 .calculator, body{
@@ -93,39 +95,40 @@
 .screen{
     background-color: var(--screen-bg);
 }
-
 .keypad{
     background-color: var(--keypad-bg);
 }
 
-.key{
-    color: var(--text-key);
-    background-color: var(--key-bg);
-    box-shadow: 0 6px var(--key-shadow);
-    cursor: pointer;
-    transition: transform 0.1s,
-                box-shadow 0.1s;
+.key.default{
+    color: var(--text-key-default);
+    background-color: var(--key-default-bg);
+    box-shadow: 0 6px var(--key-default-shadow);
+    
+}
+
+.key.standout{
+    color: var(--text-key-standout);
+    background-color: var(--key-standout-bg);
+    box-shadow: 0 6px var(--key-standout-shadow);
+    
+}
+
+.key.variant{
+    color: var(--text-key-variant);
+    background-color: var(--key-variant-bg);
+    box-shadow: 0 6px var(--key-variant-shadow);
     
 }
 
 
-
-.key:nth-child(4), .key:nth-child(17){
-    color: var(--text-accent-dull);
-    background-color: var(--key-dull-bg);
-    box-shadow: 0 6px var(--key-dull-shadow);
-}
-
-.key:last-child{
-    color: var(--text-accent-pop);
-    background-color: var(--key-pop-bg);
-    box-shadow: 0 6px var(--key-pop-shadow);
-}
-
 .key:active{
-    box-shadow: 0 0 var(--key-shadow);
+    box-shadow: none;
     transform: translateY(6px);
 }
+
+
+
+/*-----EVERYTHING ELSE-----*/
 
 
 html {
@@ -139,6 +142,7 @@ html {
 }
 
 body{
+    font-family: 'League Spartan', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -186,17 +190,21 @@ h2 {
     padding: 0.5rem;
     display:grid;
     grid-template-columns: repeat(4, 1fr);
-    /*grid-template-rows: repeat(5, 64px);*/
-
     gap: 0.5rem;
     aspect-ratio: 4/5;
 }
 
 
 .key {
+    padding:0;
+    font-family: inherit;
+    cursor: pointer;
     border: none;
     border-radius: 10px;
     font-size: 0.8rem;
+
+    /* Cool animation that doesn't entirely work
+    transition: transform 0.05s, box-shadow 0.05s; */
 }
 
 .key.wide{
