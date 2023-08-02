@@ -245,17 +245,24 @@ body{
 
 
 
-@media(min-width: 620px){
+@media(min-width: 570px){
+
     .calculator{
-        width: 600px;
+        width: 550px;
     }
 
     .keypad{
         aspect-ratio: unset;
-        grid-template-rows: repeat(5, 62px);
+        grid-template-rows: repeat(5, 55px);
+        gap: 0.8rem;
     }
 
-    html{
-        font-size: 42px;
+    .key{
+        font-size: 1rem;
     }
+
+    .screen{
+        height: 100px;
+    }
+
 }
