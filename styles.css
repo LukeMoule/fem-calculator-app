@@ -104,21 +104,21 @@
 .key.default{
     color: var(--text-key-default);
     background-color: var(--key-default-bg);
-    box-shadow: 0 6px var(--key-default-shadow);
+    box-shadow: 0 4px var(--key-default-shadow);
     
 }
 
 .key.standout{
     color: var(--text-key-standout);
     background-color: var(--key-standout-bg);
-    box-shadow: 0 6px var(--key-standout-shadow);
+    box-shadow: 0 4px var(--key-standout-shadow);
     
 }
 
 .key.variant{
     color: var(--text-key-variant);
     background-color: var(--key-variant-bg);
-    box-shadow: 0 6px var(--key-variant-shadow);
+    box-shadow: 0 4px var(--key-variant-shadow);
     
 }
 
@@ -145,7 +145,8 @@ body{
 }
 
 .calculator{
-    width: 340px;
+    width: 380px;
+    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -196,7 +197,7 @@ body{
     border-radius: 15px;
     padding: 0 0.7rem;
     display: flex;
-    height: 85px;
+    height: 2.7rem;
     justify-content: end;
     align-items: center;
     margin-bottom: 1rem;
@@ -230,7 +231,7 @@ body{
 
 .key:active{
     box-shadow: none;
-    transform: translateY(6px);
+    transform: translateY(4px);
     filter: brightness(150%);
 }
 
@@ -241,3 +242,20 @@ body{
     right: 0;
     bottom:0;}
 .attribution a { color: var(--text-main); }
+
+
+
+@media(min-width: 620px){
+    .calculator{
+        width: 600px;
+    }
+
+    .keypad{
+        aspect-ratio: unset;
+        grid-template-rows: repeat(5, 62px);
+    }
+
+    html{
+        font-size: 42px;
+    }
+}
