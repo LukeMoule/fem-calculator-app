@@ -14,10 +14,12 @@ themeButtons.forEach((themeButton) => {
 
 
 const keys = document.querySelectorAll(".key");
+const screen = document.querySelector(".screen");
 
 let screenNum = "";
 let bufferNum = "";
 let bufferOp = null;
+let waiting = false;
 
 keys.forEach((key) => {
     key.addEventListener('click', keyPress)
@@ -39,28 +41,36 @@ function keyPress(event){
         case "=":
             commit();
             break;
-        
+
         case ".":
         decimalSeparator();
         break;
         
         case "+":
             commit();
+            bufferNum = screenNum;
+            waiting = true;
             bufferOp = plus;
             break;
         
         case "-":
             commit();
+            bufferNum = screenNum;
+            waiting = true;
             bufferOp = minus;
             break;
         
         case "×":
             commit();
+            bufferNum = screenNum;
+            waiting = true;
             bufferOp = multiply;
             break;
         
         case "/":
             commit();
+            bufferNum = screenNum;
+            waiting = true;
             bufferOp = divide;
             break;
 
@@ -84,19 +94,34 @@ function reset(){
 }
 
 function del(){
-    if(screenNum || screenNum === 0){
-        let str = screenNum.toString();
-        let str2 = str.slice(0, -1);
-        // Number("") evaluates to 0
-        screenNum = Number(str2);
+    if(screenNum){
+        screenNum = screenNum.slice(0, -1);;
     }
 }
 
 function commit(){
-    if(bufferOp && (screenNum || screenNum === 0) && (bufferNum || bufferNum === 0)){
+    if(bufferOp && screenNum && bufferNum){
         answer = bufferOp(bufferNum, screenNum);
-        if(answer==Infinity){answer = NaN}
+        if(answer===Infinity){answer = "Don't do that!"}
         reset();
-        screenNum = answer;
+        screenNum = answer.toString();
+    }
+}
+
+
+
+function digit(key){
+    if (screenNum.length < 20){
+        screenNum += key;
+    }
+}
+
+function updateScreen(){
+    if(waiting){
+        screenNum = "";
+        screen.innerHTML = bufferNum;
+        waiting = false;
+    } else {
+        screen.innerHTML = screenNum;
     }
 }

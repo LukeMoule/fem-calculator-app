@@ -235,6 +235,12 @@ body{
     filter: brightness(150%);
 }
 
+.active{
+    box-shadow: none !important;
+    transform: translateY(4px);
+    filter: brightness(150%);
+}
+
 /*issues when zooming in*/
 .attribution { font-size: 11px; text-align: center;
     position: absolute;
